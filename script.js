@@ -14,5 +14,23 @@ return "rock";
 
 console.log(getComputerChoice());
 
+function getHumanChoice(){
+
+let userChoice=prompt("rock, paper or scissors?");
+
+ choice=userChoice.toLocaleLowerCase();
+
+    if (choice==="rock"){
+        return "rock";
+    }
+    else if(choice==="paper"){
+      return "paper";
+    }
+    else{
+        return "scissors";
+    }
+    
+}
+console.log(getHumanChoice());
 
 
