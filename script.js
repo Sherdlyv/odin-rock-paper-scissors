@@ -14,11 +14,12 @@ return "rock";
 
 console.log(getComputerChoice());
 
+
 function getHumanChoice(){
 
 let userChoice=prompt("rock, paper or scissors?");
 
- choice=userChoice.toLocaleLowerCase();
+ choice=userChoice.toLowerCase();
 
     if (choice==="rock"){
         return "rock";
@@ -34,3 +35,26 @@ let userChoice=prompt("rock, paper or scissors?");
 console.log(getHumanChoice());
 
 
+let humanScore=0;
+let computerScore=0;
+
+function playRound(humanChoice, computerChoice){
+   
+    if(humanChoice ==="rock" && computerChoice==="paper"){
+       computerScore++;
+        return "You lose! Paper beats Rock";
+       
+    }
+    
+else{
+    humanScore++;
+        return "You win";
+}
+
+}
+
+setTimeout(() => {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection));
+}, 1000);
