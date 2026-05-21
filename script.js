@@ -12,7 +12,7 @@ return "rock";
     }
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 
 function getHumanChoice(){
@@ -32,17 +32,24 @@ let userChoice=prompt("rock, paper or scissors?");
     }
     
 }
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
 
-
-let humanScore=0;
-let computerScore=0;
 
 function playRound(humanChoice, computerChoice){
+
+     console.log("Joueur:", humanChoice, " | Ordinateur:", computerChoice);
+
+    if(humanChoice === computerChoice){
+        return "We chose the same";
+    }
    
-    if(humanChoice ==="rock" && computerChoice==="paper"){
+    if(
+        (humanChoice ==="rock" && computerChoice==="paper") || 
+        (humanChoice === "scissors" && computerChoice==="rock") ||
+        (humanChoice === "paper" && computerChoice === "scissors")
+    ) {
        computerScore++;
-        return "You lose! Paper beats Rock";
+        return `You lose! ${computerChoice} beats ${humanChoice}`;
        
     }
     
@@ -53,8 +60,9 @@ else{
 
 }
 
-setTimeout(() => {
+
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
+
     console.log(playRound(humanSelection, computerSelection));
-}, 1000);
+
