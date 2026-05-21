@@ -44,7 +44,7 @@ let computerScore=0;
        
 function playRound(humanChoice, computerChoice){
     
-     console.log("Joueur:", humanChoice, " | Ordinateur:", computerChoice);
+     console.log("Gamer:", humanChoice, " | Computer:", computerChoice);
 
     if(humanChoice === computerChoice){
         return "We chose the same";
@@ -75,16 +75,16 @@ for(i=1; i<6; i++){
 }
 
 if (humanScore>computerScore){
-    console.log("Vous avez gagne");
+    console.log("You win");
 }
 else if(humanScore<computerScore){
-    console.log("L'ordinateur a gagne");
+    console.log("Computer wins");
 }
 else{
-    console.log("Nous sommes a egalite");
+    console.log("we are equal");
 }
 
-console.log(`Score final -> Human: ${humanScore} | Computer: ${computerScore}`);
+console.log(`Final Score -> Human: ${humanScore} | Computer: ${computerScore}`);
 }
 
 
