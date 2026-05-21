@@ -34,9 +34,16 @@ let userChoice=prompt("rock, paper or scissors?");
 }
 // console.log(getHumanChoice());
 
+function playGame(){
 
+
+let humanScore=0;
+let computerScore=0; 
+
+   let i;
+       
 function playRound(humanChoice, computerChoice){
-
+    
      console.log("Joueur:", humanChoice, " | Ordinateur:", computerChoice);
 
     if(humanChoice === computerChoice){
@@ -59,10 +66,27 @@ else{
 }
 
 }
+for(i=1; i<6; i++){
 
-
-    const humanSelection = getHumanChoice();
+ const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
     console.log(playRound(humanSelection, computerSelection));
+}
 
+if (humanScore>computerScore){
+    console.log("Vous avez gagne");
+}
+else if(humanScore<computerScore){
+    console.log("L'ordinateur a gagne");
+}
+else{
+    console.log("Nous sommes a egalite");
+}
+
+console.log(`Score final -> Human: ${humanScore} | Computer: ${computerScore}`);
+}
+
+
+   
+console.log(playGame());
